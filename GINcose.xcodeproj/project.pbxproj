@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB3CAF451C94697700B223F1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BB3CAF441C94697700B223F1 /* LICENSE */; };
+		BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */; };
+		BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7A268C1C252DE000FB617A /* AppDelegate.swift */; };
+		BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7A26931C252DE000FB617A /* Assets.xcassets */; };
+		BBDA17E81C9000DD00D6D1BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17E61C9000DD00D6D1BE /* HomeViewController.swift */; };
+		BBDA17E91C9000DD00D6D1BE /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDA17E71C9000DD00D6D1BE /* HomeViewController.xib */; };
+		BBDA17EB1C9002D500D6D1BE /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17EA1C9002D500D6D1BE /* BluetoothManager.swift */; };
+		BBDA17ED1C90035800D6D1BE /* BluetoothServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17EC1C90035800D6D1BE /* BluetoothServices.swift */; };
+		BBDA17EF1C900A4400D6D1BE /* Transmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17EE1C900A4400D6D1BE /* Transmitter.swift */; };
+		BBDA17FD1C900ACC00D6D1BE /* AuthChallengeRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F11C900ACC00D6D1BE /* AuthChallengeRxMessage.swift */; };
+		BBDA17FE1C900ACC00D6D1BE /* AuthChallengeTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F21C900ACC00D6D1BE /* AuthChallengeTxMessage.swift */; };
+		BBDA17FF1C900ACC00D6D1BE /* AuthRequestTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F31C900ACC00D6D1BE /* AuthRequestTxMessage.swift */; };
+		BBDA18001C900ACC00D6D1BE /* AuthStatusRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F41C900ACC00D6D1BE /* AuthStatusRxMessage.swift */; };
+		BBDA18011C900ACC00D6D1BE /* BondRequestTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F51C900ACC00D6D1BE /* BondRequestTxMessage.swift */; };
+		BBDA18021C900ACC00D6D1BE /* DisconnectTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F61C900ACC00D6D1BE /* DisconnectTxMessage.swift */; };
+		BBDA18031C900ACC00D6D1BE /* GlucoseRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F71C900ACC00D6D1BE /* GlucoseRxMessage.swift */; };
+		BBDA18041C900ACC00D6D1BE /* GlucoseTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F81C900ACC00D6D1BE /* GlucoseTxMessage.swift */; };
+		BBDA18051C900ACC00D6D1BE /* KeepAliveTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17F91C900ACC00D6D1BE /* KeepAliveTxMessage.swift */; };
+		BBDA18061C900ACC00D6D1BE /* TransmitterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */; };
+		BBDA18071C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */; };
+		BBDA18081C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */; };
+		BBE1EE161C8FFF2B00CC3E0B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1EE151C8FFF2B00CC3E0B /* Extensions.swift */; };
+		EAF6A4C6DD1F05E4EF502826 /* Pods_GINcose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCEAF16244CC9AE81714894 /* Pods_GINcose.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.release.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.release.xcconfig"; sourceTree = "<group>"; };
+		699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
+		BB3CAF441C94697700B223F1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseInfo.swift; sourceTree = "<group>"; };
+		BB7A26891C252DE000FB617A /* GINcose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GINcose.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB7A268C1C252DE000FB617A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB7A26931C252DE000FB617A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GINcose/Assets.xcassets; sourceTree = "<group>"; };
+		BB7A26981C252DE000FB617A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GINcose/Info.plist; sourceTree = "<group>"; };
+		BB7A269E1C252DFB00FB617A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		BB8C3DD01C272D0100ED43D8 /* GINcose-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GINcose-Bridging-Header.h"; sourceTree = "<group>"; };
+		BBDA17E61C9000DD00D6D1BE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BBDA17E71C9000DD00D6D1BE /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		BBDA17EA1C9002D500D6D1BE /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		BBDA17EC1C90035800D6D1BE /* BluetoothServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothServices.swift; sourceTree = "<group>"; };
+		BBDA17EE1C900A4400D6D1BE /* Transmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transmitter.swift; sourceTree = "<group>"; };
+		BBDA17F11C900ACC00D6D1BE /* AuthChallengeRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthChallengeRxMessage.swift; path = Messages/AuthChallengeRxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F21C900ACC00D6D1BE /* AuthChallengeTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthChallengeTxMessage.swift; path = Messages/AuthChallengeTxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F31C900ACC00D6D1BE /* AuthRequestTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRequestTxMessage.swift; path = Messages/AuthRequestTxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F41C900ACC00D6D1BE /* AuthStatusRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthStatusRxMessage.swift; path = Messages/AuthStatusRxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F51C900ACC00D6D1BE /* BondRequestTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BondRequestTxMessage.swift; path = Messages/BondRequestTxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F61C900ACC00D6D1BE /* DisconnectTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisconnectTxMessage.swift; path = Messages/DisconnectTxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F71C900ACC00D6D1BE /* GlucoseRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlucoseRxMessage.swift; path = Messages/GlucoseRxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F81C900ACC00D6D1BE /* GlucoseTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlucoseTxMessage.swift; path = Messages/GlucoseTxMessage.swift; sourceTree = "<group>"; };
+		BBDA17F91C900ACC00D6D1BE /* KeepAliveTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeepAliveTxMessage.swift; path = Messages/KeepAliveTxMessage.swift; sourceTree = "<group>"; };
+		BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterMessage.swift; path = Messages/TransmitterMessage.swift; sourceTree = "<group>"; };
+		BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterTimeRxMessage.swift; path = Messages/TransmitterTimeRxMessage.swift; sourceTree = "<group>"; };
+		BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterTimeTxMessage.swift; path = Messages/TransmitterTimeTxMessage.swift; sourceTree = "<group>"; };
+		BBE1EE151C8FFF2B00CC3E0B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BCCEAF16244CC9AE81714894 /* Pods_GINcose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GINcose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB7A26861C252DE000FB617A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF6A4C6DD1F05E4EF502826 /* Pods_GINcose.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9E7F13B66045436647AF142 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */,
+				406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB3CAF421C9468FB00B223F1 /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				BB3CAF431C94690100B223F1 /* xDripG5 */,
+			);
+			name = Licenses;
+			sourceTree = "<group>";
+		};
+		BB3CAF431C94690100B223F1 /* xDripG5 */ = {
+			isa = PBXGroup;
+			children = (
+				BB3CAF441C94697700B223F1 /* LICENSE */,
+			);
+			name = xDripG5;
+			sourceTree = "<group>";
+		};
+		BB43F8851C9153D300BB8228 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */,
+			);
+			name = RealmModels;
+			sourceTree = "<group>";
+		};
+		BB43F88A1C916AF700BB8228 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				BBDA17EA1C9002D500D6D1BE /* BluetoothManager.swift */,
+				BBDA17EC1C90035800D6D1BE /* BluetoothServices.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
+		BB7A26801C252DE000FB617A = {
+			isa = PBXGroup;
+			children = (
+				BB8C3DD01C272D0100ED43D8 /* GINcose-Bridging-Header.h */,
+				BB7A268B1C252DE000FB617A /* GINcose */,
+				BB8C3DCF1C272C6800ED43D8 /* Supporting Files */,
+				BB7A26A01C252EE600FB617A /* Frameworks */,
+				BB7A268A1C252DE000FB617A /* Products */,
+				A9E7F13B66045436647AF142 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		BB7A268A1C252DE000FB617A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB7A26891C252DE000FB617A /* GINcose.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB7A268B1C252DE000FB617A /* GINcose */ = {
+			isa = PBXGroup;
+			children = (
+				BB3CAF421C9468FB00B223F1 /* Licenses */,
+				BB43F88A1C916AF700BB8228 /* Bluetooth */,
+				BBDA17F01C900A9300D6D1BE /* Messages */,
+				BB43F8851C9153D300BB8228 /* RealmModels */,
+				BB7A268C1C252DE000FB617A /* AppDelegate.swift */,
+				BBE1EE151C8FFF2B00CC3E0B /* Extensions.swift */,
+				BBDA17EE1C900A4400D6D1BE /* Transmitter.swift */,
+				BBDA17E61C9000DD00D6D1BE /* HomeViewController.swift */,
+				BBDA17E71C9000DD00D6D1BE /* HomeViewController.xib */,
+			);
+			path = GINcose;
+			sourceTree = "<group>";
+		};
+		BB7A26A01C252EE600FB617A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB7A269E1C252DFB00FB617A /* CoreBluetooth.framework */,
+				BCCEAF16244CC9AE81714894 /* Pods_GINcose.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB8C3DCF1C272C6800ED43D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB7A26931C252DE000FB617A /* Assets.xcassets */,
+				BB7A26981C252DE000FB617A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBDA17F01C900A9300D6D1BE /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				BBDA17F11C900ACC00D6D1BE /* AuthChallengeRxMessage.swift */,
+				BBDA17F21C900ACC00D6D1BE /* AuthChallengeTxMessage.swift */,
+				BBDA17F31C900ACC00D6D1BE /* AuthRequestTxMessage.swift */,
+				BBDA17F41C900ACC00D6D1BE /* AuthStatusRxMessage.swift */,
+				BBDA17F51C900ACC00D6D1BE /* BondRequestTxMessage.swift */,
+				BBDA17F61C900ACC00D6D1BE /* DisconnectTxMessage.swift */,
+				BBDA17F71C900ACC00D6D1BE /* GlucoseRxMessage.swift */,
+				BBDA17F81C900ACC00D6D1BE /* GlucoseTxMessage.swift */,
+				BBDA17F91C900ACC00D6D1BE /* KeepAliveTxMessage.swift */,
+				BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */,
+				BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */,
+				BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB7A26881C252DE000FB617A /* GINcose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB7A269B1C252DE000FB617A /* Build configuration list for PBXNativeTarget "GINcose" */;
+			buildPhases = (
+				431AEE8440743AFC4DE74B64 /* Check Pods Manifest.lock */,
+				BB7A26851C252DE000FB617A /* Sources */,
+				BB7A26861C252DE000FB617A /* Frameworks */,
+				BB7A26871C252DE000FB617A /* Resources */,
+				29686D098D7CA04942EC60DC /* Copy Pods Resources */,
+				70AEF522BEE69A05DA2625D2 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GINcose;
+			productName = GINcose;
+			productReference = BB7A26891C252DE000FB617A /* GINcose.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB7A26811C252DE000FB617A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "GINtech Systems";
+				TargetAttributes = {
+					BB7A26881C252DE000FB617A = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = HUHLMDNCW3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = BB7A26841C252DE000FB617A /* Build configuration list for PBXProject "GINcose" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB7A26801C252DE000FB617A;
+			productRefGroup = BB7A268A1C252DE000FB617A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB7A26881C252DE000FB617A /* GINcose */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB7A26871C252DE000FB617A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB3CAF451C94697700B223F1 /* LICENSE in Resources */,
+				BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */,
+				BBDA17E91C9000DD00D6D1BE /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29686D098D7CA04942EC60DC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GINcose/Pods-GINcose-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		431AEE8440743AFC4DE74B64 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70AEF522BEE69A05DA2625D2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GINcose/Pods-GINcose-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB7A26851C252DE000FB617A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBDA18011C900ACC00D6D1BE /* BondRequestTxMessage.swift in Sources */,
+				BBDA17FD1C900ACC00D6D1BE /* AuthChallengeRxMessage.swift in Sources */,
+				BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */,
+				BBDA17FF1C900ACC00D6D1BE /* AuthRequestTxMessage.swift in Sources */,
+				BBE1EE161C8FFF2B00CC3E0B /* Extensions.swift in Sources */,
+				BBDA18061C900ACC00D6D1BE /* TransmitterMessage.swift in Sources */,
+				BBDA17E81C9000DD00D6D1BE /* HomeViewController.swift in Sources */,
+				BBDA18001C900ACC00D6D1BE /* AuthStatusRxMessage.swift in Sources */,
+				BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */,
+				BBDA18031C900ACC00D6D1BE /* GlucoseRxMessage.swift in Sources */,
+				BBDA18021C900ACC00D6D1BE /* DisconnectTxMessage.swift in Sources */,
+				BBDA17EF1C900A4400D6D1BE /* Transmitter.swift in Sources */,
+				BBDA17FE1C900ACC00D6D1BE /* AuthChallengeTxMessage.swift in Sources */,
+				BBDA17ED1C90035800D6D1BE /* BluetoothServices.swift in Sources */,
+				BBDA18071C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift in Sources */,
+				BBDA18081C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift in Sources */,
+				BBDA18051C900ACC00D6D1BE /* KeepAliveTxMessage.swift in Sources */,
+				BBDA18041C900ACC00D6D1BE /* GlucoseTxMessage.swift in Sources */,
+				BBDA17EB1C9002D500D6D1BE /* BluetoothManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BB7A26991C252DE000FB617A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB7A269A1C252DE000FB617A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB7A269C1C252DE000FB617A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GINcose/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GINtechSystems.GINcose;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GINcose-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GINcose-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB7A269D1C252DE000FB617A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GINcose/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GINtechSystems.GINcose;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "GINcose-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GINcose-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB7A26841C252DE000FB617A /* Build configuration list for PBXProject "GINcose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB7A26991C252DE000FB617A /* Debug */,
+				BB7A269A1C252DE000FB617A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB7A269B1C252DE000FB617A /* Build configuration list for PBXNativeTarget "GINcose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB7A269C1C252DE000FB617A /* Debug */,
+				BB7A269D1C252DE000FB617A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB7A26811C252DE000FB617A /* Project object */;
+}
