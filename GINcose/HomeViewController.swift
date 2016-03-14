@@ -33,6 +33,7 @@ class HomeViewController: UIViewController, TransmitterDelegate {
         
         appDel.delay(0.5) { () -> () in
             //self.testGlucose()
+            //self.testSensor()
         }
     }
 
@@ -83,6 +84,13 @@ class HomeViewController: UIViewController, TransmitterDelegate {
         let glucoseMessage = GlucoseRxMessage(data: NSData(hexadecimalString: "3100680a00008a715700cc0006ffc42a")!)!
         
         transmitter(appDel.defaultTransmitter, didReadGlucose: glucoseMessage)
+    }
+    
+    //Run a test sensor result.
+    func testSensor() {
+        let sensorMessage = SensorRxMessage(data: NSData(hexadecimalString: "2f006a817400a03303004046030093d6")!)!
+        
+        transmitter(appDel.defaultTransmitter, didReadSensor: sensorMessage)
     }
     
 }
