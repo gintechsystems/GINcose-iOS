@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB3CAF451C94697700B223F1 /* xDripG5 in Resources */ = {isa = PBXBuildFile; fileRef = BB3CAF441C94697700B223F1 /* xDripG5 */; };
 		BB3CE72A1C97444500E61769 /* CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE7291C97444500E61769 /* CRC.swift */; };
 		BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */; };
 		BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */; };
-		BB3CE7301C974F2400E61769 /* GINcose in Resources */ = {isa = PBXBuildFile; fileRef = BB3CE72F1C974F2400E61769 /* GINcose */; };
 		BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */; };
 		BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7A268C1C252DE000FB617A /* AppDelegate.swift */; };
 		BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7A26931C252DE000FB617A /* Assets.xcassets */; };
@@ -262,9 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3CAF451C94697700B223F1 /* xDripG5 in Resources */,
 				BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */,
-				BB3CE7301C974F2400E61769 /* GINcose in Resources */,
 				BBDA17E91C9000DD00D6D1BE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
