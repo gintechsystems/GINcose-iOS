@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let defaultTransmitter = Transmitter(ID: "4053KQ", startTimeInterval: nil, passiveModeEnabled: false)
+    let defaultTransmitter = Transmitter(ID: "4053KQ", startTimeInterval: nil)
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BB3CAF451C94697700B223F1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BB3CAF441C94697700B223F1 /* LICENSE */; };
+		BB3CE72A1C97444500E61769 /* CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE7291C97444500E61769 /* CRC.swift */; };
+		BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */; };
+		BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */; };
 		BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */; };
 		BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7A268C1C252DE000FB617A /* AppDelegate.swift */; };
 		BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7A26931C252DE000FB617A /* Assets.xcassets */; };
@@ -36,6 +39,9 @@
 		406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.release.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.release.xcconfig"; sourceTree = "<group>"; };
 		699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
 		BB3CAF441C94697700B223F1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BB3CE7291C97444500E61769 /* CRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRC.swift; sourceTree = "<group>"; };
+		BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorRxMessage.swift; sourceTree = "<group>"; };
+		BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTxMessage.swift; sourceTree = "<group>"; };
 		BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseInfo.swift; sourceTree = "<group>"; };
 		BB7A26891C252DE000FB617A /* GINcose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GINcose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7A268C1C252DE000FB617A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +193,9 @@
 				BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */,
 				BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */,
 				BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */,
+				BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */,
+				BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */,
+				BB3CE7291C97444500E61769 /* CRC.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -320,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBDA18011C900ACC00D6D1BE /* BondRequestTxMessage.swift in Sources */,
+				BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */,
 				BBDA17FD1C900ACC00D6D1BE /* AuthChallengeRxMessage.swift in Sources */,
 				BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */,
 				BBDA17FF1C900ACC00D6D1BE /* AuthRequestTxMessage.swift in Sources */,
@@ -331,11 +341,13 @@
 				BBDA18031C900ACC00D6D1BE /* GlucoseRxMessage.swift in Sources */,
 				BBDA18021C900ACC00D6D1BE /* DisconnectTxMessage.swift in Sources */,
 				BBDA17EF1C900A4400D6D1BE /* Transmitter.swift in Sources */,
+				BB3CE72A1C97444500E61769 /* CRC.swift in Sources */,
 				BBDA17FE1C900ACC00D6D1BE /* AuthChallengeTxMessage.swift in Sources */,
 				BBDA17ED1C90035800D6D1BE /* BluetoothServices.swift in Sources */,
 				BBDA18071C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift in Sources */,
 				BBDA18081C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift in Sources */,
 				BBDA18051C900ACC00D6D1BE /* KeepAliveTxMessage.swift in Sources */,
+				BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */,
 				BBDA18041C900ACC00D6D1BE /* GlucoseTxMessage.swift in Sources */,
 				BBDA17EB1C9002D500D6D1BE /* BluetoothManager.swift in Sources */,
 			);

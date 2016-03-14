@@ -65,6 +65,10 @@ class HomeViewController: UIViewController, TransmitterDelegate {
         }
     }
     
+    func transmitter(transmitter: Transmitter, didReadSensor sensor: SensorRxMessage) {
+        NSLog("\(sensor)")
+    }
+    
     func transmitter(transmitter: Transmitter, didError error: ErrorType) {
         NSLog("\(error)")
         

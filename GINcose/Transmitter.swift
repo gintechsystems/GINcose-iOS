@@ -14,6 +14,8 @@ public protocol TransmitterDelegate: class {
     
     func transmitter(transmitter: Transmitter, didReadGlucose glucose: GlucoseRxMessage)
     
+    func transmitter(transmitter: Transmitter, didReadSensor sensor: SensorRxMessage)
+    
     func transmitter(transmitter: Transmitter, didError error: ErrorType)
 }
 
@@ -30,18 +32,15 @@ public class Transmitter: BluetoothManagerDelegate {
     
     public var startTimeInterval: NSTimeInterval?
     
-    public var passiveModeEnabled: Bool
-    
     public weak var delegate: TransmitterDelegate?
     
     private let bluetoothManager = BluetoothManager()
     
     private var operationQueue = dispatch_queue_create("com.gintechsystems.GINcose.transmitterOperationQueue", DISPATCH_QUEUE_SERIAL)
     
-    public init(ID: String, startTimeInterval: NSTimeInterval?, passiveModeEnabled: Bool = false) {
+    public init(ID: String, startTimeInterval: NSTimeInterval?) {
         self.ID = ID
         self.startTimeInterval = startTimeInterval
-        self.passiveModeEnabled = passiveModeEnabled
         
         bluetoothManager.delegate = self
     }
@@ -79,21 +78,13 @@ public class Transmitter: BluetoothManagerDelegate {
         }
         
         dispatch_async(operationQueue) {
-            if self.passiveModeEnabled {
-                do {
-                    try self.listenToControl()
-                } catch let error {
-                    self.delegate?.transmitter(self, didError: error)
-                }
-            } else {
-                do {
-                    try self.authenticate()
-                    try self.control()
-                } catch let error {
-                    manager.disconnect()
-                    
-                    self.delegate?.transmitter(self, didError: error)
-                }
+            do {
+                try self.authenticate()
+                try self.control()
+            } catch let error {
+                manager.disconnect()
+                
+                self.delegate?.transmitter(self, didError: error)
             }
         }
     }
@@ -227,45 +218,24 @@ public class Transmitter: BluetoothManagerDelegate {
         
         self.delegate?.transmitter(self, didReadGlucose: glucoseMessage)
         
+        let sensorData: NSData
+        do {
+            sensorData = try bluetoothManager.writeValueAndWait(SensorTxMessage().data, forCharacteristicUUID: .Control, expectingFirstByte: SensorRxMessage.opcode)
+        } catch let error {
+            throw TransmitterError.ControlError("Error writing sensor request: \(error)")
+        }
+        
+        guard let sensorMessage = SensorRxMessage(data: sensorData) else {
+            throw TransmitterError.ControlError("Unable to parse sensor response: \(sensorData)")
+        }
+        
+        self.delegate?.transmitter(self, didReadSensor: sensorMessage)
+        
         do {
             try bluetoothManager.setNotifyEnabledAndWait(false, forCharacteristicUUID: .Control)
             try bluetoothManager.writeValueAndWait(DisconnectTxMessage().data, forCharacteristicUUID: .Control)
         } catch {
         }
-    }
-    
-    private func listenToControl() throws {
-        do {
-            try bluetoothManager.setNotifyEnabledAndWait(true, forCharacteristicUUID: .Control)
-        } catch let error {
-            throw TransmitterError.ControlError("Error enabling notification: \(error)")
-        }
-        
-        let timeData: NSData
-        do {
-            timeData = try bluetoothManager.waitForCharacteristicValueUpdate(.Control, expectingFirstByte: TransmitterTimeRxMessage.opcode)
-        } catch let error {
-            throw TransmitterError.ControlError("Error waiting for time response: \(error)")
-        }
-        
-        guard let timeMessage = TransmitterTimeRxMessage(data: timeData) else {
-            throw TransmitterError.ControlError("Unable to parse time response: \(timeData)")
-        }
-        
-        self.startTimeInterval = NSDate().timeIntervalSince1970 - NSTimeInterval(timeMessage.currentTime)
-        
-        let glucoseData: NSData
-        do {
-            glucoseData = try bluetoothManager.waitForCharacteristicValueUpdate(.Control, expectingFirstByte: GlucoseRxMessage.opcode)
-        } catch let error {
-            throw TransmitterError.ControlError("Error waiting for glucose response: \(error)")
-        }
-        
-        guard let glucoseMessage = GlucoseRxMessage(data: glucoseData) else {
-            throw TransmitterError.ControlError("Unable to parse glucose response: \(glucoseData)")
-        }
-        
-        self.delegate?.transmitter(self, didReadGlucose: glucoseMessage)
     }
     
     private var cryptKey: NSData? {
