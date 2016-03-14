@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB3CAF451C94697700B223F1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BB3CAF441C94697700B223F1 /* LICENSE */; };
+		BB3CAF451C94697700B223F1 /* xDripG5 in Resources */ = {isa = PBXBuildFile; fileRef = BB3CAF441C94697700B223F1 /* xDripG5 */; };
 		BB3CE72A1C97444500E61769 /* CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE7291C97444500E61769 /* CRC.swift */; };
 		BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */; };
 		BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */; };
+		BB3CE7301C974F2400E61769 /* GINcose in Resources */ = {isa = PBXBuildFile; fileRef = BB3CE72F1C974F2400E61769 /* GINcose */; };
 		BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */; };
 		BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7A268C1C252DE000FB617A /* AppDelegate.swift */; };
 		BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7A26931C252DE000FB617A /* Assets.xcassets */; };
@@ -38,10 +39,11 @@
 /* Begin PBXFileReference section */
 		406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.release.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.release.xcconfig"; sourceTree = "<group>"; };
 		699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
-		BB3CAF441C94697700B223F1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BB3CAF441C94697700B223F1 /* xDripG5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xDripG5; sourceTree = "<group>"; };
 		BB3CE7291C97444500E61769 /* CRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRC.swift; sourceTree = "<group>"; };
 		BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorRxMessage.swift; sourceTree = "<group>"; };
 		BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTxMessage.swift; sourceTree = "<group>"; };
+		BB3CE72F1C974F2400E61769 /* GINcose */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GINcose; sourceTree = "<group>"; };
 		BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseInfo.swift; sourceTree = "<group>"; };
 		BB7A26891C252DE000FB617A /* GINcose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GINcose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7A268C1C252DE000FB617A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,17 +96,10 @@
 		BB3CAF421C9468FB00B223F1 /* Licenses */ = {
 			isa = PBXGroup;
 			children = (
-				BB3CAF431C94690100B223F1 /* xDripG5 */,
+				BB3CE72F1C974F2400E61769 /* GINcose */,
+				BB3CAF441C94697700B223F1 /* xDripG5 */,
 			);
 			name = Licenses;
-			sourceTree = "<group>";
-		};
-		BB3CAF431C94690100B223F1 /* xDripG5 */ = {
-			isa = PBXGroup;
-			children = (
-				BB3CAF441C94697700B223F1 /* LICENSE */,
-			);
-			name = xDripG5;
 			sourceTree = "<group>";
 		};
 		BB43F8851C9153D300BB8228 /* RealmModels */ = {
@@ -267,8 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB3CAF451C94697700B223F1 /* LICENSE in Resources */,
+				BB3CAF451C94697700B223F1 /* xDripG5 in Resources */,
 				BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */,
+				BB3CE7301C974F2400E61769 /* GINcose in Resources */,
 				BBDA17E91C9000DD00D6D1BE /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
