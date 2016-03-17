@@ -288,6 +288,8 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             return nil
         }
         
+        //NSLog("\(characteristics)")
+        
         return characteristics.itemWithUUIDString(UUIDString)
     }
     

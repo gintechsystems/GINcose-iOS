@@ -21,6 +21,7 @@ public struct SensorRxMessage: TransmitterRxMessage {
             if data[0] == self.dynamicType.opcode {
                 status = data[1]
                 timestamp = data[2...5]
+                
                 unfiltered = data[6...9]
                 filtered = data[10...13]
                 

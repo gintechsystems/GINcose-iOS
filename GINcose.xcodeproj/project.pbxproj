@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0A22261C97BC2D00A4ABCD /* CalibrationRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A22251C97BC2D00A4ABCD /* CalibrationRxMessage.swift */; };
+		BB0A22281C97BC3B00A4ABCD /* CalibrationTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A22271C97BC3B00A4ABCD /* CalibrationTxMessage.swift */; };
 		BB3CE72A1C97444500E61769 /* CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE7291C97444500E61769 /* CRC.swift */; };
 		BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */; };
 		BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.release.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.release.xcconfig"; sourceTree = "<group>"; };
 		699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
+		BB0A22251C97BC2D00A4ABCD /* CalibrationRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationRxMessage.swift; sourceTree = "<group>"; };
+		BB0A22271C97BC3B00A4ABCD /* CalibrationTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationTxMessage.swift; sourceTree = "<group>"; };
 		BB3CAF441C94697700B223F1 /* xDripG5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xDripG5; sourceTree = "<group>"; };
 		BB3CE7291C97444500E61769 /* CRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRC.swift; sourceTree = "<group>"; };
 		BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorRxMessage.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */,
 				BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */,
 				BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */,
+				BB0A22251C97BC2D00A4ABCD /* CalibrationRxMessage.swift */,
+				BB0A22271C97BC3B00A4ABCD /* CalibrationTxMessage.swift */,
 				BB3CE7291C97444500E61769 /* CRC.swift */,
 			);
 			name = Messages;
@@ -333,6 +339,7 @@
 				BBDA18031C900ACC00D6D1BE /* GlucoseRxMessage.swift in Sources */,
 				BBDA18021C900ACC00D6D1BE /* DisconnectTxMessage.swift in Sources */,
 				BBDA17EF1C900A4400D6D1BE /* Transmitter.swift in Sources */,
+				BB0A22261C97BC2D00A4ABCD /* CalibrationRxMessage.swift in Sources */,
 				BB3CE72A1C97444500E61769 /* CRC.swift in Sources */,
 				BBDA17FE1C900ACC00D6D1BE /* AuthChallengeTxMessage.swift in Sources */,
 				BBDA17ED1C90035800D6D1BE /* BluetoothServices.swift in Sources */,
@@ -341,6 +348,7 @@
 				BBDA18051C900ACC00D6D1BE /* KeepAliveTxMessage.swift in Sources */,
 				BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */,
 				BBDA18041C900ACC00D6D1BE /* GlucoseTxMessage.swift in Sources */,
+				BB0A22281C97BC3B00A4ABCD /* CalibrationTxMessage.swift in Sources */,
 				BBDA17EB1C9002D500D6D1BE /* BluetoothManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

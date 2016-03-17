@@ -88,9 +88,8 @@ class HomeViewController: UIViewController, TransmitterDelegate {
     
     //Run a test sensor result.
     func testSensor() {
-        let sensorMessage = SensorRxMessage(data: NSData(hexadecimalString: "2f006a817400a03303004046030093d6")!)!
+        let sensorMessage = SensorRxMessage(data: NSData(hexadecimalString: "2f00a1b27400600b030020000300560f")!)!
         
         transmitter(appDel.defaultTransmitter, didReadSensor: sensorMessage)
     }
-    
 }
