@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let defaultTransmitter = Transmitter(ID: "4053KQ", startTimeInterval: nil)
+    var glucoseTimer :NSTimer!
+    
+    let defaultTransmitter = Transmitter(ID: "405C1R", startTimeInterval: nil)
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -33,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeVC = HomeViewController(nibName:"HomeViewController", bundle:nil)
         self.window!.rootViewController = homeVC
         
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true
@@ -46,10 +50,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        if (glucoseTimer == nil) {
+            //Every 5 minutes &  check if there is a new glucose object, if so see what we can do with it.
+            glucoseTimer = NSTimer.scheduledTimerWithTimeInterval(305.0, target: self, selector: "sendLocalNotification", userInfo: nil, repeats: true)
+            
+            NSLog("GlucoseTimer Started")
+        }
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        
+        if (glucoseTimer != nil) {
+            glucoseTimer.invalidate()
+            glucoseTimer = nil
+            
+            NSLog("GlucoseTimer Stopped")
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -58,6 +76,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        application.applicationIconBadgeNumber = 0
+    }
+    
+    func sendLocalNotification() {
+        let realm = try! Realm()
+        let lastTwoGlucoses = realm.objects(GlucoseInfo).sorted("timestamp", ascending: false)
+        
+        let previousGlucose :GlucoseInfo? = lastTwoGlucoses[1]
+        let newestGlucose :GlucoseInfo? = lastTwoGlucoses[0]
+        
+        let localNotification = UILocalNotification()
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.fireDate = NSDate()
+        localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        
+        if (newestGlucose != nil && previousGlucose != nil) {
+            if (newestGlucose!.glucose < 210 && previousGlucose!.glucose >= 210) {
+                if #available(iOS 8.2, *) {
+                    localNotification.alertTitle = "Stable Sugar Alert"
+                }
+                localNotification.alertBody = String(format: "Your blood sugar is stable, now at %d", newestGlucose!.glucose)
+            }
+        }
+        else if (newestGlucose != nil && previousGlucose == nil) {
+            if (newestGlucose!.glucose >= 210) {
+                if #available(iOS 8.2, *) {
+                    localNotification.alertTitle = "High Sugar Alert"
+                }
+                localNotification.alertBody = String(format: "Your blood sugar is high at %d", newestGlucose!.glucose)
+            }
+            else if (newestGlucose!.glucose <= 90) {
+                if #available(iOS 8.2, *) {
+                    localNotification.alertTitle = "Low Sugar Alert"
+                }
+                localNotification.alertBody = String(format: "Your blood sugar is low at %d", newestGlucose!.glucose)
+            }
+        }
+        else {
+            //Will it ever reach here?
+        }
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     func delay(delay:Double, closure:()->()) {
