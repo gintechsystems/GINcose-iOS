@@ -75,7 +75,7 @@ class BluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     
     // MARK: - GCD Management
     
-    private var managerQueue = dispatch_queue_create("com.gintechsystems.GINcose.bluetoothManagerQueue", DISPATCH_QUEUE_SERIAL)
+    private var managerQueue = dispatch_queue_create("com.gintechsystems.GINcose.bluetoothManagerQueue", dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_USER_INITIATED, 0))
     
     override init() {
         super.init()

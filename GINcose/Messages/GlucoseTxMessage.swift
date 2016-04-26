@@ -11,9 +11,8 @@ import Foundation
 
 struct GlucoseTxMessage: TransmitterTxMessage {
     let opcode: UInt8 = 0x30
-    let crc: UInt16 = CRC.calculateCRC(0x30)
-
+    
     var byteSequence: [Any] {
-        return [opcode, crc]
+        return [opcode, opcode.crc16()]
     }
 }

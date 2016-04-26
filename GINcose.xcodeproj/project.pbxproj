@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		BB0A22261C97BC2D00A4ABCD /* CalibrationRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A22251C97BC2D00A4ABCD /* CalibrationRxMessage.swift */; };
 		BB0A22281C97BC3B00A4ABCD /* CalibrationTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0A22271C97BC3B00A4ABCD /* CalibrationTxMessage.swift */; };
-		BB3CE72A1C97444500E61769 /* CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE7291C97444500E61769 /* CRC.swift */; };
+		BB3386B51CD001200031BA94 /* FirmwareVersionTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386B41CD001200031BA94 /* FirmwareVersionTxMessage.swift */; };
+		BB3386B71CD001340031BA94 /* GlucoseHistoryTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386B61CD001340031BA94 /* GlucoseHistoryTxMessage.swift */; };
+		BB3386B91CD0014F0031BA94 /* SessionStartTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386B81CD0014F0031BA94 /* SessionStartTxMessage.swift */; };
+		BB3386BB1CD0015B0031BA94 /* SessionStopTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386BA1CD0015B0031BA94 /* SessionStopTxMessage.swift */; };
+		BB3386BD1CD0016D0031BA94 /* TransmitterVersionTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386BC1CD0016D0031BA94 /* TransmitterVersionTxMessage.swift */; };
+		BB3386BF1CD002A40031BA94 /* CalibrateGlucoseTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386BE1CD002A40031BA94 /* CalibrateGlucoseTxMessage.swift */; };
+		BB3386C11CD002BD0031BA94 /* BatteryStatusTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386C01CD002BD0031BA94 /* BatteryStatusTxMessage.swift */; };
 		BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */; };
 		BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */; };
 		BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */; };
+		BB79214B1CA9158C00FA63CB /* TransmitterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79214A1CA9158C00FA63CB /* TransmitterStatus.swift */; };
 		BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7A268C1C252DE000FB617A /* AppDelegate.swift */; };
 		BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7A26931C252DE000FB617A /* Assets.xcassets */; };
 		BBDA17E81C9000DD00D6D1BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17E61C9000DD00D6D1BE /* HomeViewController.swift */; };
@@ -41,12 +48,19 @@
 		699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
 		BB0A22251C97BC2D00A4ABCD /* CalibrationRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationRxMessage.swift; sourceTree = "<group>"; };
 		BB0A22271C97BC3B00A4ABCD /* CalibrationTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationTxMessage.swift; sourceTree = "<group>"; };
+		BB3386B41CD001200031BA94 /* FirmwareVersionTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirmwareVersionTxMessage.swift; sourceTree = "<group>"; };
+		BB3386B61CD001340031BA94 /* GlucoseHistoryTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseHistoryTxMessage.swift; sourceTree = "<group>"; };
+		BB3386B81CD0014F0031BA94 /* SessionStartTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStartTxMessage.swift; sourceTree = "<group>"; };
+		BB3386BA1CD0015B0031BA94 /* SessionStopTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStopTxMessage.swift; sourceTree = "<group>"; };
+		BB3386BC1CD0016D0031BA94 /* TransmitterVersionTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmitterVersionTxMessage.swift; sourceTree = "<group>"; };
+		BB3386BE1CD002A40031BA94 /* CalibrateGlucoseTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrateGlucoseTxMessage.swift; sourceTree = "<group>"; };
+		BB3386C01CD002BD0031BA94 /* BatteryStatusTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryStatusTxMessage.swift; sourceTree = "<group>"; };
 		BB3CAF441C94697700B223F1 /* xDripG5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xDripG5; sourceTree = "<group>"; };
-		BB3CE7291C97444500E61769 /* CRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRC.swift; sourceTree = "<group>"; };
 		BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorRxMessage.swift; sourceTree = "<group>"; };
 		BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTxMessage.swift; sourceTree = "<group>"; };
 		BB3CE72F1C974F2400E61769 /* GINcose */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GINcose; sourceTree = "<group>"; };
 		BB43F8861C9153E800BB8228 /* GlucoseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlucoseInfo.swift; sourceTree = "<group>"; };
+		BB79214A1CA9158C00FA63CB /* TransmitterStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransmitterStatus.swift; sourceTree = "<group>"; };
 		BB7A26891C252DE000FB617A /* GINcose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GINcose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7A268C1C252DE000FB617A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7A26931C252DE000FB617A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GINcose/Assets.xcassets; sourceTree = "<group>"; };
@@ -182,19 +196,26 @@
 				BBDA17F21C900ACC00D6D1BE /* AuthChallengeTxMessage.swift */,
 				BBDA17F31C900ACC00D6D1BE /* AuthRequestTxMessage.swift */,
 				BBDA17F41C900ACC00D6D1BE /* AuthStatusRxMessage.swift */,
+				BB3386C01CD002BD0031BA94 /* BatteryStatusTxMessage.swift */,
 				BBDA17F51C900ACC00D6D1BE /* BondRequestTxMessage.swift */,
-				BBDA17F61C900ACC00D6D1BE /* DisconnectTxMessage.swift */,
-				BBDA17F71C900ACC00D6D1BE /* GlucoseRxMessage.swift */,
-				BBDA17F81C900ACC00D6D1BE /* GlucoseTxMessage.swift */,
-				BBDA17F91C900ACC00D6D1BE /* KeepAliveTxMessage.swift */,
-				BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */,
-				BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */,
-				BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */,
-				BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */,
-				BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */,
 				BB0A22251C97BC2D00A4ABCD /* CalibrationRxMessage.swift */,
 				BB0A22271C97BC3B00A4ABCD /* CalibrationTxMessage.swift */,
-				BB3CE7291C97444500E61769 /* CRC.swift */,
+				BB3386BE1CD002A40031BA94 /* CalibrateGlucoseTxMessage.swift */,
+				BBDA17F61C900ACC00D6D1BE /* DisconnectTxMessage.swift */,
+				BB3386B41CD001200031BA94 /* FirmwareVersionTxMessage.swift */,
+				BBDA17F71C900ACC00D6D1BE /* GlucoseRxMessage.swift */,
+				BBDA17F81C900ACC00D6D1BE /* GlucoseTxMessage.swift */,
+				BB3386B61CD001340031BA94 /* GlucoseHistoryTxMessage.swift */,
+				BBDA17F91C900ACC00D6D1BE /* KeepAliveTxMessage.swift */,
+				BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */,
+				BB79214A1CA9158C00FA63CB /* TransmitterStatus.swift */,
+				BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */,
+				BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */,
+				BB3386BC1CD0016D0031BA94 /* TransmitterVersionTxMessage.swift */,
+				BB3CE72B1C97447400E61769 /* SensorRxMessage.swift */,
+				BB3CE72D1C97448500E61769 /* SensorTxMessage.swift */,
+				BB3386B81CD0014F0031BA94 /* SessionStartTxMessage.swift */,
+				BB3386BA1CD0015B0031BA94 /* SessionStopTxMessage.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -329,8 +350,12 @@
 				BBDA18011C900ACC00D6D1BE /* BondRequestTxMessage.swift in Sources */,
 				BB3CE72C1C97447400E61769 /* SensorRxMessage.swift in Sources */,
 				BBDA17FD1C900ACC00D6D1BE /* AuthChallengeRxMessage.swift in Sources */,
+				BB3386BF1CD002A40031BA94 /* CalibrateGlucoseTxMessage.swift in Sources */,
 				BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */,
 				BBDA17FF1C900ACC00D6D1BE /* AuthRequestTxMessage.swift in Sources */,
+				BB3386B51CD001200031BA94 /* FirmwareVersionTxMessage.swift in Sources */,
+				BB3386C11CD002BD0031BA94 /* BatteryStatusTxMessage.swift in Sources */,
+				BB3386BD1CD0016D0031BA94 /* TransmitterVersionTxMessage.swift in Sources */,
 				BBE1EE161C8FFF2B00CC3E0B /* Extensions.swift in Sources */,
 				BBDA18061C900ACC00D6D1BE /* TransmitterMessage.swift in Sources */,
 				BBDA17E81C9000DD00D6D1BE /* HomeViewController.swift in Sources */,
@@ -338,18 +363,21 @@
 				BB43F8871C9153E800BB8228 /* GlucoseInfo.swift in Sources */,
 				BBDA18031C900ACC00D6D1BE /* GlucoseRxMessage.swift in Sources */,
 				BBDA18021C900ACC00D6D1BE /* DisconnectTxMessage.swift in Sources */,
+				BB3386B91CD0014F0031BA94 /* SessionStartTxMessage.swift in Sources */,
 				BBDA17EF1C900A4400D6D1BE /* Transmitter.swift in Sources */,
 				BB0A22261C97BC2D00A4ABCD /* CalibrationRxMessage.swift in Sources */,
-				BB3CE72A1C97444500E61769 /* CRC.swift in Sources */,
 				BBDA17FE1C900ACC00D6D1BE /* AuthChallengeTxMessage.swift in Sources */,
 				BBDA17ED1C90035800D6D1BE /* BluetoothServices.swift in Sources */,
 				BBDA18071C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift in Sources */,
 				BBDA18081C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift in Sources */,
 				BBDA18051C900ACC00D6D1BE /* KeepAliveTxMessage.swift in Sources */,
 				BB3CE72E1C97448500E61769 /* SensorTxMessage.swift in Sources */,
+				BB3386BB1CD0015B0031BA94 /* SessionStopTxMessage.swift in Sources */,
+				BB79214B1CA9158C00FA63CB /* TransmitterStatus.swift in Sources */,
 				BBDA18041C900ACC00D6D1BE /* GlucoseTxMessage.swift in Sources */,
 				BB0A22281C97BC3B00A4ABCD /* CalibrationTxMessage.swift in Sources */,
 				BBDA17EB1C9002D500D6D1BE /* BluetoothManager.swift in Sources */,
+				BB3386B71CD001340031BA94 /* GlucoseHistoryTxMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

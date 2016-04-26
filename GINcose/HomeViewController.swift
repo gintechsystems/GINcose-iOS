@@ -31,10 +31,10 @@ class HomeViewController: UIViewController, TransmitterDelegate {
             self.glucoseLabel.text = String(latestGlucose!.glucose)
         }
         
-        appDel.delay(0.5) { () -> () in
-            //self.testGlucose()
-            //self.testSensor()
-        }
+        /*appDel.delay(0.5) { () -> () in
+            self.testGlucose()
+            self.testSensor()
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

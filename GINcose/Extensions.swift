@@ -8,10 +8,36 @@
 
 import UIKit
 
+func CRCCCITTXModem(bytes: [UInt8], count: Int? = nil) -> UInt16 {
+    let count = count ?? bytes.count
+    
+    var crc: UInt16 = 0
+    
+    for byte in bytes[0..<count] {
+        crc ^= UInt16(byte) << 8
+        
+        for _ in 0..<8 {
+            if crc & 0x8000 != 0 {
+                crc = crc << 1 ^ 0x1021
+            } else {
+                crc = crc << 1
+            }
+        }
+    }
+    
+    return crc
+}
+
 extension NSString {
     func compatibleContainsString(string: NSString) -> Bool{
         let range = self.rangeOfString(string as String)
         return range.length != 0
+    }
+}
+
+extension UInt8 {
+    func crc16() -> UInt16 {
+        return CRCCCITTXModem([self])
     }
 }
 
@@ -104,6 +130,14 @@ extension NSData {
         }
     }
     
+    func crc16() -> UInt16 {
+        return CRCCCITTXModem(self[0..<length])
+    }
+    
+    func crcValid() -> Bool {
+        return CRCCCITTXModem(self[0..<length-2]) == self[length-2..<length]
+    }
+    
     public var hexadecimalString: String {
         let bytesCollection = UnsafeBufferPointer<UInt8>(start: UnsafePointer<UInt8>(bytes), count: length)
         
@@ -114,5 +148,49 @@ extension NSData {
         }
         
         return string as String
+    }
+}
+
+extension NSUserDefaults {
+    var passiveModeEnabled: Bool {
+        get {
+            return boolForKey("passiveModeEnabled") ?? false
+        }
+        set {
+            setBool(newValue, forKey: "passiveModeEnabled")
+        }
+    }
+    
+    var startTimeInterval: NSTimeInterval? {
+        get {
+            let value = doubleForKey("startTimeInterval")
+            
+            return value > 0 ? value : nil
+        }
+        set {
+            if let value = newValue {
+                setDouble(value, forKey: "startTimeInterval")
+            } else {
+                setObject(nil, forKey: "startTimeInterval")
+            }
+        }
+    }
+    
+    var stayConnected: Bool {
+        get {
+            return boolForKey("stayConnected") ?? true
+        }
+        set {
+            setBool(newValue, forKey: "stayConnected")
+        }
+    }
+    
+    var transmitterID: String {
+        get {
+            return stringForKey("transmitterID") ?? "000000"
+        }
+        set {
+            setObject(newValue, forKey: "transmitterID")
+        }
     }
 }

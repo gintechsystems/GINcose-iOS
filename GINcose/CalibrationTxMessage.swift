@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+
+struct CalibrationTxMessage: TransmitterTxMessage {
+    let opcode: UInt8 = 0x33
+    
+    var byteSequence: [Any] {
+        return [opcode, opcode.crc16()]
+    }
+}

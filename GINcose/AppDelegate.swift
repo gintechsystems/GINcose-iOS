@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var glucoseTimer :NSTimer!
     
-    let defaultTransmitter = Transmitter(ID: "405C1R", startTimeInterval: nil)
+    let defaultTransmitter = Transmitter(ID: "401Y38", startTimeInterval: nil)
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
         
+        
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         return true
@@ -53,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (glucoseTimer == nil) {
             //Every 5 minutes &  check if there is a new glucose object, if so see what we can do with it.
-            glucoseTimer = NSTimer.scheduledTimerWithTimeInterval(305.0, target: self, selector: "sendLocalNotification", userInfo: nil, repeats: true)
+            glucoseTimer = NSTimer.scheduledTimerWithTimeInterval(305.0, target: self, selector: #selector(sendLocalNotification), userInfo: nil, repeats: true)
             
             NSLog("GlucoseTimer Started")
         }
@@ -137,6 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
         
         return dateFormatter
     }()

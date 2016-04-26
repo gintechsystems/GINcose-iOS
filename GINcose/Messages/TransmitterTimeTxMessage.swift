@@ -11,9 +11,8 @@ import Foundation
 
 struct TransmitterTimeTxMessage: TransmitterTxMessage {
     let opcode: UInt8 = 0x24
-    let crc: UInt16 = CRC.calculateCRC(0x24)
-
+    
     var byteSequence: [Any] {
-        return [opcode, crc]
+        return [opcode, opcode.crc16()]
     }
 }

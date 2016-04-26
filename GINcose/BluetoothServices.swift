@@ -6,13 +6,6 @@
 //  Copyright © 2016 GINtech Systems. All rights reserved.
 //
 
-/*
-G5 BLE attributes, retrieved using LightBlue on 2016-08-03
-
-These are the G4 details, for reference:
-https://github.com/StephenBlackWasAlreadyTaken/xDrip/blob/af20e32652d19aa40becc1a39f6276cad187fdce/app/src/main/java/com/eveningoutpost/dexdrip/UtilityModels/DexShareAttributes.java
-*/
-
 enum TransmitterServiceUUID: String {
     case DeviceInfo = "180A"
     case Advertisement = "FEBC"
@@ -27,7 +20,6 @@ enum DeviceInfoCharacteristicUUID: String {
     case ManufacturerNameString = "2A29"
 }
 
-
 enum CGMServiceCharacteristicUUID: String {
     // Read/Notify
     case Communication = "F8083533-849E-531C-C594-30F1F86A4EA5"
@@ -38,7 +30,6 @@ enum CGMServiceCharacteristicUUID: String {
     // Read/Write/Notify
     case ProbablyBackfill = "F8083536-849E-531C-C594-30F1F86A4EA5"
 }
-
 
 enum ServiceBCharacteristicUUID: String {
     // Write/Indicate

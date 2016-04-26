@@ -11,9 +11,8 @@ import Foundation
 
 struct SensorTxMessage: TransmitterTxMessage {
     let opcode: UInt8 = 0x2e
-    let crc: UInt16 = CRC.calculateCRC(0x2e)
     
     var byteSequence: [Any] {
-        return [opcode, crc]
+        return [opcode, opcode.crc16()]
     }
 }

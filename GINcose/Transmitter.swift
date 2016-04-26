@@ -36,7 +36,7 @@ public class Transmitter: BluetoothManagerDelegate {
     
     private let bluetoothManager = BluetoothManager()
     
-    private var operationQueue = dispatch_queue_create("com.gintechsystems.GINcose.transmitterOperationQueue", DISPATCH_QUEUE_SERIAL)
+    private var operationQueue = dispatch_queue_create("com.gintechsystems.GINcose.transmitterOperationQueue", dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_USER_INITIATED, 0))
     
     public init(ID: String, startTimeInterval: NSTimeInterval?) {
         self.ID = ID
