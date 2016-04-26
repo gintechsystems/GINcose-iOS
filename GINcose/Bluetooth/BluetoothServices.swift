@@ -16,7 +16,6 @@ enum TransmitterServiceUUID: String {
 
 enum DeviceInfoCharacteristicUUID: String {
     // Read
-    // "DexcomUN"
     case ManufacturerNameString = "2A29"
 }
 
