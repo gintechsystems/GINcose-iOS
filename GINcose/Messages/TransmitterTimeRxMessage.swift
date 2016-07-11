@@ -12,15 +12,18 @@ import Foundation
 struct TransmitterTimeRxMessage: TransmitterRxMessage {
     static let opcode: UInt8 = 0x25
     let status: TransmitterStatus
-    let currentTime: UInt32
+    let transmitterTime: UInt32
     let sessionStartTime: UInt32
+    let isSession: UInt8
     
     init?(data: NSData) {
+        NSLog("\(data.length)")
         if data.length == 16 && data.crcValid() {
             if data[0] == self.dynamicType.opcode {
                 status = TransmitterStatus(rawValue: data[1])
-                currentTime = data[2...5]
+                transmitterTime = data[2...5]
                 sessionStartTime = data[6...9]
+                isSession = data[10]
             } else {
                 return nil
             }

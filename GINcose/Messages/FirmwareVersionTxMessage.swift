@@ -9,6 +9,10 @@
 import Foundation
 
 
-struct FirmwareVersionTxMessage {
+struct FirmwareVersionTxMessage :TransmitterTxMessage {
     let opcode: UInt8 = 0x20
+    
+    var byteSequence: [Any] {
+        return [opcode, opcode.crc16()]
+    }
 }

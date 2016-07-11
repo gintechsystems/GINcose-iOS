@@ -1,23 +1,22 @@
 //
-//  CalibrationRxMessage.swift
+//  FirmwareVersionRxMessage.swift
 //  GINcose
 //
-//  Created by Joe Ginley on 3/14/16.
+//  Created by Joe Ginley on 4/26/16.
 //  Copyright © 2016 GINtech Systems. All rights reserved.
 //
 
 import Foundation
 
 
-public struct CalibrationRxMessage: TransmitterRxMessage {
-    static let opcode: UInt8 = 0x34
-    public let timestamp: UInt32
+struct FirmwareVersionRxMessage: TransmitterRxMessage {
+    static let opcode: UInt8 = 0x21
+    let status: TransmitterStatus
     
     init?(data: NSData) {
-        NSLog("\(data)")
-        if data.length >= 14 {
+        if data.length >= 17 {
             if data[0] == self.dynamicType.opcode {
-                timestamp = data[2...5]
+                status = TransmitterStatus(rawValue: data[1])
             }
             else {
                 return nil

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct TransmitterVersionTxMessage: TransmitterTxMessage {
+    let opcode: UInt8 = 0x4a
+    
+    var byteSequence: [Any] {
+        return [opcode, opcode.crc16()]
+    }
+}
