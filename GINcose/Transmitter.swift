@@ -36,17 +36,14 @@ public final class Transmitter: BluetoothManagerDelegate {
     
     private var lastTimeMessage: TransmitterTimeRxMessage?
     
-    public var passiveModeEnabled: Bool
-    
     public weak var delegate: TransmitterDelegate?
     
     private let bluetoothManager = BluetoothManager()
     
     private var operationQueue = DispatchQueue(label: "com.loudnate.xDripG5.transmitterOperationQueue")
     
-    public init(ID: String, passiveModeEnabled: Bool = false) {
+    public init(ID: String) {
         self.ID = ID
-        self.passiveModeEnabled = passiveModeEnabled
         
         bluetoothManager.delegate = self
     }
@@ -89,21 +86,13 @@ public final class Transmitter: BluetoothManagerDelegate {
         }
         
         operationQueue.async {
-            if self.passiveModeEnabled {
-                do {
-                    try self.listenToControl()
-                } catch let error {
-                    self.delegate?.transmitter(self, didError: error)
-                }
-            } else {
-                do {
-                    try self.authenticate()
-                    try self.control()
-                } catch let error {
-                    manager.disconnect()
-                    
-                    self.delegate?.transmitter(self, didError: error)
-                }
+            do {
+                try self.authenticate()
+                try self.control()
+            } catch let error {
+                manager.disconnect()
+                
+                self.delegate?.transmitter(self, didError: error)
             }
         }
     }
@@ -121,8 +110,6 @@ public final class Transmitter: BluetoothManagerDelegate {
     }
     
     func bluetoothManager(_ manager: BluetoothManager, didReceiveControlResponse response: Data) {
-        guard passiveModeEnabled else { return }
-        
         guard response.count > 0 else { return }
         
         switch response[0] {

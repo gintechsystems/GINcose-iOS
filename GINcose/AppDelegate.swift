@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var glucoseTimer :Timer!
     
-    let defaultTransmitter = Transmitter(ID: "", passiveModeEnabled: UserDefaults.standard.passiveModeEnabled)
+    let defaultTransmitter = Transmitter(ID: "")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

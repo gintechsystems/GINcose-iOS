@@ -9,13 +9,6 @@
 import Foundation
 
 
-extension NSString {
-    func compatibleContainsString(_ string: NSString) -> Bool{
-        let range = self.range(of: string as String)
-        return range.length != 0
-    }
-}
-
 extension Data {
     public init?(hexadecimalString: String) {
         guard let chars = hexadecimalString.cString(using: String.Encoding.utf8) else {
@@ -62,15 +55,6 @@ extension Data {
 }
 
 extension UserDefaults {
-    var passiveModeEnabled: Bool {
-        get {
-            return bool(forKey: "passiveModeEnabled")
-        }
-        set {
-            set(newValue, forKey: "passiveModeEnabled")
-        }
-    }
-    
     var stayConnected: Bool {
         get {
             return object(forKey: "stayConnected") != nil ? bool(forKey: "stayConnected") : true
