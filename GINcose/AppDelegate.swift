@@ -9,20 +9,20 @@
 import UIKit
 import RealmSwift
 
-let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+let appDel = UIApplication.shared.delegate as! AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var glucoseTimer :NSTimer!
+    var glucoseTimer :Timer!
     
-    let defaultTransmitter = Transmitter(ID: "401Y38", startTimeInterval: nil)
+    let defaultTransmitter = Transmitter(ID: "", passiveModeEnabled: UserDefaults.standard.passiveModeEnabled)
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
             schemaVersion: 0,
@@ -35,32 +35,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeVC = HomeViewController(nibName:"HomeViewController", bundle:nil)
         self.window!.rootViewController = homeVC
         
-        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         
         
-        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         if (glucoseTimer == nil) {
-            //Every 5 minutes &  check if there is a new glucose object, if so see what we can do with it.
-            glucoseTimer = NSTimer.scheduledTimerWithTimeInterval(305.0, target: self, selector: #selector(sendLocalNotification), userInfo: nil, repeats: true)
+            //Every 5 minutes (+5 seconds to offset Dexcom) &  check if there is a new glucose object, if so see what we can do with it.
+            glucoseTimer = Timer.scheduledTimer(timeInterval: 305.0, target: self, selector: #selector(sendLocalNotification), userInfo: nil, repeats: true)
             
             NSLog("GlucoseTimer Started")
         }
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
         
         if (glucoseTimer != nil) {
@@ -71,29 +71,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         application.applicationIconBadgeNumber = 0
     }
     
     func sendLocalNotification() {
         let realm = try! Realm()
-        let lastTwoGlucoses = realm.objects(GlucoseInfo).sorted("timestamp", ascending: false)
+        let lastTwoGlucoses = realm.objects(GlucoseInfo.self).sorted(byProperty: "timestamp", ascending: false)
         
         let previousGlucose :GlucoseInfo? = lastTwoGlucoses[1]
         let newestGlucose :GlucoseInfo? = lastTwoGlucoses[0]
         
         let localNotification = UILocalNotification()
-        localNotification.timeZone = NSTimeZone.defaultTimeZone()
-        localNotification.fireDate = NSDate()
-        localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        localNotification.timeZone = TimeZone.current
+        localNotification.fireDate = Date()
+        localNotification.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber + 1
         
         if (newestGlucose != nil && previousGlucose != nil) {
             if (newestGlucose!.glucose < 210 && previousGlucose!.glucose >= 210) {
@@ -121,24 +121,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Will it ever reach here?
         }
         
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        UIApplication.shared.scheduleLocalNotification(localNotification)
     }
     
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
     
-    let glucoseDateFormatter: NSDateFormatter = {
-        let dateFormatter = NSDateFormatter()
+    let glucoseDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         
         return dateFormatter
     }()

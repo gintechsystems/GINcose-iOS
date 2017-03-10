@@ -10,18 +10,20 @@ import Foundation
 
 
 public enum TransmitterStatus {
-    case OK
-    case LowBattery
-    case Unknown(UInt8)
+    public typealias RawValue = UInt8
     
-    init(rawValue: UInt8) {
+    case ok
+    case lowBattery
+    case unknown(RawValue)
+    
+    init(rawValue: RawValue) {
         switch rawValue {
         case 0:
-            self = .OK
+            self = .ok
         case 0x81:
-            self = LowBattery
+            self = .lowBattery
         default:
-            self = Unknown(rawValue)
+            self = .unknown(rawValue)
         }
     }
 }
@@ -31,9 +33,9 @@ extension TransmitterStatus: Equatable { }
 
 public func ==(lhs: TransmitterStatus, rhs: TransmitterStatus) -> Bool {
     switch (lhs, rhs) {
-    case (.OK, .OK), (.LowBattery, .LowBattery):
+    case (.ok, .ok), (.lowBattery, .lowBattery):
         return true
-    case (.Unknown(let left), .Unknown(let right)) where left == right:
+    case (.unknown(let left), .unknown(let right)) where left == right:
         return true
     default:
         return false

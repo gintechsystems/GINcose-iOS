@@ -16,20 +16,18 @@ public struct SensorRxMessage: TransmitterRxMessage {
     public let unfiltered: UInt32
     public let filtered: UInt32
     
-    init?(data: NSData) {
-        if data.length >= 14 {
-            if data[0] == self.dynamicType.opcode {
-                status = data[1]
-                timestamp = data[2...5]
-                
-                unfiltered = data[6...9]
-                filtered = data[10...13]
-                
-            } else {
-                return nil
-            }
-        } else {
+    init?(data: Data) {
+        guard data.count >= 14 else {
             return nil
         }
+        
+        guard data[0] == type(of: self).opcode else {
+            return nil
+        }
+        
+        status = data[1]
+        timestamp = data[2..<5]
+        unfiltered = data[6..<9]
+        filtered = data[10..<13]
     }
 }

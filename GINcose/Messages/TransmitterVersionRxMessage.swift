@@ -11,35 +11,20 @@ import Foundation
 
 struct TransmitterVersionRxMessage: TransmitterRxMessage {
     static let opcode: UInt8 = 0x4b
-    let status: TransmitterStatus
-    let versionMajor: UInt8
-    let versionMinor: UInt8
-    let versionRevision: UInt8
-    let versionBuild: UInt8
-    let swNumber: UInt32
-    let storageModeDays: UInt16
-    let apiVersion: UInt32
-    let maxRuntimeDays: UInt16
-    let maxStorageModeDays: UInt16
+    let status: UInt8
+    let firmwareVersion: [UInt8]
     
-    init?(data: NSData) {
-        if data.length == 19 && data.crcValid() {
-            if data[0] == self.dynamicType.opcode {
-                status = TransmitterStatus(rawValue: data[1])
-                versionMajor = data[2]
-                versionMinor = data[3]
-                versionRevision = data[4]
-                versionBuild = data[5]
-                swNumber = data[6...9]
-                storageModeDays = data[10...11]
-                apiVersion = data[12...15]
-                maxRuntimeDays = data[16...17]
-                maxStorageModeDays = data[17...18]
-            } else {
-                return nil
-            }
-        } else {
+    init?(data: Data) {
+        guard data.count == 19 && data.crcValid() else {
             return nil
         }
+        
+        guard data[0] == type(of: self).opcode else {
+            return nil
+        }
+        
+        status = data[1]
+        firmwareVersion = data[2..<6]
     }
+    
 }

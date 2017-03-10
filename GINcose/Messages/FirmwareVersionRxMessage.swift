@@ -13,17 +13,15 @@ struct FirmwareVersionRxMessage: TransmitterRxMessage {
     static let opcode: UInt8 = 0x21
     let status: TransmitterStatus
     
-    init?(data: NSData) {
-        if data.length >= 17 {
-            if data[0] == self.dynamicType.opcode {
-                status = TransmitterStatus(rawValue: data[1])
-            }
-            else {
-                return nil
-            }
-        }
-        else {
+    init?(data: Data) {
+        guard data.count >= 17 else {
             return nil
         }
+        
+        guard data[0] == type(of: self).opcode else {
+            return nil
+        }
+        
+        status = TransmitterStatus(rawValue: data[1])
     }
 }

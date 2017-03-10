@@ -1,9 +1,9 @@
 //
 //  BondRequestTxMessage.swift
-//  xDrip5
+//  GINcose
 //
-//  Created by Nathan Racklyeft on 11/23/15.
-//  Copyright © 2015 Nathan Racklyeft. All rights reserved.
+//  Created by Joe Ginley on 3/9/17.
+//  Copyright © 2017 GINtech Systems. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import Foundation
 
 struct BondRequestTxMessage: TransmitterTxMessage {
     let opcode: UInt8 = 0x7
-
+    
     var byteSequence: [Any] {
         return [opcode]
     }

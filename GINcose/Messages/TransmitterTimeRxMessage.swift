@@ -1,9 +1,9 @@
 //
 //  TransmitterTimeRxMessage.swift
-//  xDrip5
+//  GINcose
 //
-//  Created by Nathan Racklyeft on 11/23/15.
-//  Copyright © 2015 Nathan Racklyeft. All rights reserved.
+//  Created by Joe Ginley on 3/9/17.
+//  Copyright © 2017 GINtech Systems. All rights reserved.
 //
 
 import Foundation
@@ -11,24 +11,27 @@ import Foundation
 
 struct TransmitterTimeRxMessage: TransmitterRxMessage {
     static let opcode: UInt8 = 0x25
-    let status: TransmitterStatus
-    let transmitterTime: UInt32
+    let status: UInt8
+    let currentTime: UInt32
     let sessionStartTime: UInt32
-    let isSession: UInt8
     
-    init?(data: NSData) {
-        NSLog("\(data.length)")
-        if data.length == 16 && data.crcValid() {
-            if data[0] == self.dynamicType.opcode {
-                status = TransmitterStatus(rawValue: data[1])
-                transmitterTime = data[2...5]
-                sessionStartTime = data[6...9]
-                isSession = data[10]
-            } else {
-                return nil
-            }
-        } else {
+    init?(data: Data) {
+        guard data.count == 16 && data.crcValid() else {
             return nil
         }
+        
+        guard data[0] == type(of: self).opcode else {
+            return nil
+        }
+        
+        status = data[1]
+        currentTime = data[2..<6]
+        sessionStartTime = data[6..<10]
     }
+}
+
+extension TransmitterTimeRxMessage: Equatable { }
+
+func ==(lhs: TransmitterTimeRxMessage, rhs: TransmitterTimeRxMessage) -> Bool {
+    return lhs.currentTime == rhs.currentTime
 }

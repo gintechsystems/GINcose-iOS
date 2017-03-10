@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9696629E4978034694B2F729 /* Pods_GINcose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773900BADFBF94257A72E278 /* Pods_GINcose.framework */; };
 		BB3386CE1CD0069E0031BA94 /* BatteryStatusTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386C21CD0069E0031BA94 /* BatteryStatusTxMessage.swift */; };
 		BB3386CF1CD0069E0031BA94 /* CalibrateGlucoseTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386C31CD0069E0031BA94 /* CalibrateGlucoseTxMessage.swift */; };
 		BB3386D21CD0069E0031BA94 /* FirmwareVersionTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386C61CD0069E0031BA94 /* FirmwareVersionTxMessage.swift */; };
@@ -22,6 +23,16 @@
 		BB3386E31CD007680031BA94 /* BluetoothServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386E11CD007680031BA94 /* BluetoothServices.swift */; };
 		BB3386E51CD036900031BA94 /* FirmwareVersionRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386E41CD036900031BA94 /* FirmwareVersionRxMessage.swift */; };
 		BB3386E71CD0981B0031BA94 /* TransmitterVersionRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3386E61CD0981B0031BA94 /* TransmitterVersionRxMessage.swift */; };
+		BB4AD3861E7260D200F27D10 /* Glucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3851E7260D200F27D10 /* Glucose.swift */; };
+		BB4AD3881E72610400F27D10 /* HKUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3871E72610400F27D10 /* HKUnit.swift */; };
+		BB4AD3911E7261D100F27D10 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3901E7261D100F27D10 /* AESCrypt.m */; };
+		BB4AD3931E7261F900F27D10 /* CalibrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3921E7261F900F27D10 /* CalibrationState.swift */; };
+		BB4AD3A21E726C6900F27D10 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD39F1E726C6900F27D10 /* Extensions.swift */; };
+		BB4AD3A31E726C6900F27D10 /* NSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3A01E726C6900F27D10 /* NSData.swift */; };
+		BB4AD3A41E726C6900F27D10 /* NSData+CRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3A11E726C6900F27D10 /* NSData+CRC.swift */; };
+		BB4AD3A81E726C8700F27D10 /* CalibrationDataRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3A51E726C8700F27D10 /* CalibrationDataRxMessage.swift */; };
+		BB4AD3A91E726C8700F27D10 /* SessionStartRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3A61E726C8700F27D10 /* SessionStartRxMessage.swift */; };
+		BB4AD3AA1E726C8700F27D10 /* SessionStopRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4AD3A71E726C8700F27D10 /* SessionStopRxMessage.swift */; };
 		BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7A268C1C252DE000FB617A /* AppDelegate.swift */; };
 		BB7A26941C252DE000FB617A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7A26931C252DE000FB617A /* Assets.xcassets */; };
 		BBDA17E81C9000DD00D6D1BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17E61C9000DD00D6D1BE /* HomeViewController.swift */; };
@@ -39,13 +50,12 @@
 		BBDA18061C900ACC00D6D1BE /* TransmitterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */; };
 		BBDA18071C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */; };
 		BBDA18081C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */; };
-		BBE1EE161C8FFF2B00CC3E0B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE1EE151C8FFF2B00CC3E0B /* Extensions.swift */; };
-		EAF6A4C6DD1F05E4EF502826 /* Pods_GINcose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCEAF16244CC9AE81714894 /* Pods_GINcose.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.release.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.release.xcconfig"; sourceTree = "<group>"; };
-		699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
+		24779AC083A00823EEF7D946 /* Pods-GINcose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.release.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.release.xcconfig"; sourceTree = "<group>"; };
+		2D71FA3567551188D8B415FD /* Pods-GINcose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GINcose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GINcose/Pods-GINcose.debug.xcconfig"; sourceTree = "<group>"; };
+		773900BADFBF94257A72E278 /* Pods_GINcose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GINcose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3386C21CD0069E0031BA94 /* BatteryStatusTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BatteryStatusTxMessage.swift; path = Messages/BatteryStatusTxMessage.swift; sourceTree = "<group>"; };
 		BB3386C31CD0069E0031BA94 /* CalibrateGlucoseTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalibrateGlucoseTxMessage.swift; path = Messages/CalibrateGlucoseTxMessage.swift; sourceTree = "<group>"; };
 		BB3386C61CD0069E0031BA94 /* FirmwareVersionTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirmwareVersionTxMessage.swift; path = Messages/FirmwareVersionTxMessage.swift; sourceTree = "<group>"; };
@@ -56,13 +66,22 @@
 		BB3386CB1CD0069E0031BA94 /* SessionStopTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionStopTxMessage.swift; path = Messages/SessionStopTxMessage.swift; sourceTree = "<group>"; };
 		BB3386CC1CD0069E0031BA94 /* TransmitterStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterStatus.swift; path = Messages/TransmitterStatus.swift; sourceTree = "<group>"; };
 		BB3386CD1CD0069E0031BA94 /* TransmitterVersionTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterVersionTxMessage.swift; path = Messages/TransmitterVersionTxMessage.swift; sourceTree = "<group>"; };
-		BB3386DA1CD0072A0031BA94 /* GINcose */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GINcose; path = Licenses/GINcose; sourceTree = "<group>"; };
-		BB3386DB1CD0072A0031BA94 /* xDripG5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = xDripG5; path = Licenses/xDripG5; sourceTree = "<group>"; };
 		BB3386DE1CD007600031BA94 /* GlucoseInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlucoseInfo.swift; path = RealmModels/GlucoseInfo.swift; sourceTree = "<group>"; };
 		BB3386E01CD007680031BA94 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothManager.swift; path = Bluetooth/BluetoothManager.swift; sourceTree = "<group>"; };
 		BB3386E11CD007680031BA94 /* BluetoothServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothServices.swift; path = Bluetooth/BluetoothServices.swift; sourceTree = "<group>"; };
 		BB3386E41CD036900031BA94 /* FirmwareVersionRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirmwareVersionRxMessage.swift; path = Messages/FirmwareVersionRxMessage.swift; sourceTree = "<group>"; };
 		BB3386E61CD0981B0031BA94 /* TransmitterVersionRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterVersionRxMessage.swift; path = Messages/TransmitterVersionRxMessage.swift; sourceTree = "<group>"; };
+		BB4AD3851E7260D200F27D10 /* Glucose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glucose.swift; sourceTree = "<group>"; };
+		BB4AD3871E72610400F27D10 /* HKUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HKUnit.swift; sourceTree = "<group>"; };
+		BB4AD38F1E7261D100F27D10 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AESCrypt.h; path = AES/AESCrypt.h; sourceTree = "<group>"; };
+		BB4AD3901E7261D100F27D10 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AESCrypt.m; path = AES/AESCrypt.m; sourceTree = "<group>"; };
+		BB4AD3921E7261F900F27D10 /* CalibrationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationState.swift; sourceTree = "<group>"; };
+		BB4AD39F1E726C6900F27D10 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = "<group>"; };
+		BB4AD3A01E726C6900F27D10 /* NSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSData.swift; path = Extensions/NSData.swift; sourceTree = "<group>"; };
+		BB4AD3A11E726C6900F27D10 /* NSData+CRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+CRC.swift"; path = "Extensions/NSData+CRC.swift"; sourceTree = "<group>"; };
+		BB4AD3A51E726C8700F27D10 /* CalibrationDataRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalibrationDataRxMessage.swift; path = Messages/CalibrationDataRxMessage.swift; sourceTree = "<group>"; };
+		BB4AD3A61E726C8700F27D10 /* SessionStartRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionStartRxMessage.swift; path = Messages/SessionStartRxMessage.swift; sourceTree = "<group>"; };
+		BB4AD3A71E726C8700F27D10 /* SessionStopRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionStopRxMessage.swift; path = Messages/SessionStopRxMessage.swift; sourceTree = "<group>"; };
 		BB7A26891C252DE000FB617A /* GINcose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GINcose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7A268C1C252DE000FB617A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7A26931C252DE000FB617A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = GINcose/Assets.xcassets; sourceTree = "<group>"; };
@@ -84,8 +103,6 @@
 		BBDA17FA1C900ACC00D6D1BE /* TransmitterMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterMessage.swift; path = Messages/TransmitterMessage.swift; sourceTree = "<group>"; };
 		BBDA17FB1C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterTimeRxMessage.swift; path = Messages/TransmitterTimeRxMessage.swift; sourceTree = "<group>"; };
 		BBDA17FC1C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransmitterTimeTxMessage.swift; path = Messages/TransmitterTimeTxMessage.swift; sourceTree = "<group>"; };
-		BBE1EE151C8FFF2B00CC3E0B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		BCCEAF16244CC9AE81714894 /* Pods_GINcose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GINcose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,29 +110,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAF6A4C6DD1F05E4EF502826 /* Pods_GINcose.framework in Frameworks */,
+				9696629E4978034694B2F729 /* Pods_GINcose.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A9E7F13B66045436647AF142 /* Pods */ = {
+		84BD7709B1FF5187CE6B3D1A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */,
-				406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */,
+				2D71FA3567551188D8B415FD /* Pods-GINcose.debug.xcconfig */,
+				24779AC083A00823EEF7D946 /* Pods-GINcose.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		BB3CAF421C9468FB00B223F1 /* Licenses */ = {
-			isa = PBXGroup;
-			children = (
-				BB3386DA1CD0072A0031BA94 /* GINcose */,
-				BB3386DB1CD0072A0031BA94 /* xDripG5 */,
-			);
-			name = Licenses;
 			sourceTree = "<group>";
 		};
 		BB43F8851C9153D300BB8228 /* RealmModels */ = {
@@ -135,6 +143,25 @@
 			name = Bluetooth;
 			sourceTree = "<group>";
 		};
+		BB4AD3891E72615E00F27D10 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				BB4AD38F1E7261D100F27D10 /* AESCrypt.h */,
+				BB4AD3901E7261D100F27D10 /* AESCrypt.m */,
+			);
+			name = AES;
+			sourceTree = "<group>";
+		};
+		BB4AD39E1E7267DE00F27D10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB4AD39F1E726C6900F27D10 /* Extensions.swift */,
+				BB4AD3A01E726C6900F27D10 /* NSData.swift */,
+				BB4AD3A11E726C6900F27D10 /* NSData+CRC.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		BB7A26801C252DE000FB617A = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +170,7 @@
 				BB8C3DCF1C272C6800ED43D8 /* Supporting Files */,
 				BB7A26A01C252EE600FB617A /* Frameworks */,
 				BB7A268A1C252DE000FB617A /* Products */,
-				A9E7F13B66045436647AF142 /* Pods */,
+				84BD7709B1FF5187CE6B3D1A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,12 +185,15 @@
 		BB7A268B1C252DE000FB617A /* GINcose */ = {
 			isa = PBXGroup;
 			children = (
+				BB4AD3891E72615E00F27D10 /* AES */,
 				BB43F88A1C916AF700BB8228 /* Bluetooth */,
-				BB3CAF421C9468FB00B223F1 /* Licenses */,
+				BB4AD39E1E7267DE00F27D10 /* Extensions */,
 				BBDA17F01C900A9300D6D1BE /* Messages */,
 				BB43F8851C9153D300BB8228 /* RealmModels */,
 				BB7A268C1C252DE000FB617A /* AppDelegate.swift */,
-				BBE1EE151C8FFF2B00CC3E0B /* Extensions.swift */,
+				BB4AD3921E7261F900F27D10 /* CalibrationState.swift */,
+				BB4AD3851E7260D200F27D10 /* Glucose.swift */,
+				BB4AD3871E72610400F27D10 /* HKUnit.swift */,
 				BBDA17EE1C900A4400D6D1BE /* Transmitter.swift */,
 				BBDA17E61C9000DD00D6D1BE /* HomeViewController.swift */,
 				BBDA17E71C9000DD00D6D1BE /* HomeViewController.xib */,
@@ -175,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7A269E1C252DFB00FB617A /* CoreBluetooth.framework */,
-				BCCEAF16244CC9AE81714894 /* Pods_GINcose.framework */,
+				773900BADFBF94257A72E278 /* Pods_GINcose.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,6 +228,7 @@
 				BBDA17F41C900ACC00D6D1BE /* AuthStatusRxMessage.swift */,
 				BB3386C21CD0069E0031BA94 /* BatteryStatusTxMessage.swift */,
 				BBDA17F51C900ACC00D6D1BE /* BondRequestTxMessage.swift */,
+				BB4AD3A51E726C8700F27D10 /* CalibrationDataRxMessage.swift */,
 				BB3386C31CD0069E0031BA94 /* CalibrateGlucoseTxMessage.swift */,
 				BBDA17F61C900ACC00D6D1BE /* DisconnectTxMessage.swift */,
 				BB3386E41CD036900031BA94 /* FirmwareVersionRxMessage.swift */,
@@ -214,7 +245,9 @@
 				BB3386CD1CD0069E0031BA94 /* TransmitterVersionTxMessage.swift */,
 				BB3386C81CD0069E0031BA94 /* SensorRxMessage.swift */,
 				BB3386C91CD0069E0031BA94 /* SensorTxMessage.swift */,
+				BB4AD3A61E726C8700F27D10 /* SessionStartRxMessage.swift */,
 				BB3386CA1CD0069E0031BA94 /* SessionStartTxMessage.swift */,
+				BB4AD3A71E726C8700F27D10 /* SessionStopRxMessage.swift */,
 				BB3386CB1CD0069E0031BA94 /* SessionStopTxMessage.swift */,
 			);
 			name = Messages;
@@ -227,12 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB7A269B1C252DE000FB617A /* Build configuration list for PBXNativeTarget "GINcose" */;
 			buildPhases = (
-				431AEE8440743AFC4DE74B64 /* Check Pods Manifest.lock */,
+				A232FBDB97BEF71A3B0148B3 /* [CP] Check Pods Manifest.lock */,
 				BB7A26851C252DE000FB617A /* Sources */,
 				BB7A26861C252DE000FB617A /* Frameworks */,
 				BB7A26871C252DE000FB617A /* Resources */,
-				29686D098D7CA04942EC60DC /* Copy Pods Resources */,
-				70AEF522BEE69A05DA2625D2 /* Embed Pods Frameworks */,
+				4CF4A0631C827950E19B5949 /* [CP] Embed Pods Frameworks */,
+				BF04E553EEC46B84618FDDF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,12 +283,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "GINtech Systems";
 				TargetAttributes = {
 					BB7A26881C252DE000FB617A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = HUHLMDNCW3;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -295,49 +330,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29686D098D7CA04942EC60DC /* Copy Pods Resources */ = {
+		4CF4A0631C827950E19B5949 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GINcose/Pods-GINcose-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		431AEE8440743AFC4DE74B64 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		70AEF522BEE69A05DA2625D2 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GINcose/Pods-GINcose-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A232FBDB97BEF71A3B0148B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF04E553EEC46B84618FDDF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GINcose/Pods-GINcose-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -355,15 +390,22 @@
 				BB7A268D1C252DE000FB617A /* AppDelegate.swift in Sources */,
 				BBDA17FF1C900ACC00D6D1BE /* AuthRequestTxMessage.swift in Sources */,
 				BB3386CE1CD0069E0031BA94 /* BatteryStatusTxMessage.swift in Sources */,
+				BB4AD3A81E726C8700F27D10 /* CalibrationDataRxMessage.swift in Sources */,
 				BB3386D61CD0069E0031BA94 /* SessionStartTxMessage.swift in Sources */,
-				BBE1EE161C8FFF2B00CC3E0B /* Extensions.swift in Sources */,
 				BBDA18061C900ACC00D6D1BE /* TransmitterMessage.swift in Sources */,
+				BB4AD3A91E726C8700F27D10 /* SessionStartRxMessage.swift in Sources */,
 				BB3386E51CD036900031BA94 /* FirmwareVersionRxMessage.swift in Sources */,
+				BB4AD3911E7261D100F27D10 /* AESCrypt.m in Sources */,
 				BBDA17E81C9000DD00D6D1BE /* HomeViewController.swift in Sources */,
+				BB4AD3AA1E726C8700F27D10 /* SessionStopRxMessage.swift in Sources */,
+				BB4AD3931E7261F900F27D10 /* CalibrationState.swift in Sources */,
 				BB3386DF1CD007600031BA94 /* GlucoseInfo.swift in Sources */,
 				BBDA18001C900ACC00D6D1BE /* AuthStatusRxMessage.swift in Sources */,
 				BBDA18031C900ACC00D6D1BE /* GlucoseRxMessage.swift in Sources */,
+				BB4AD3A41E726C6900F27D10 /* NSData+CRC.swift in Sources */,
+				BB4AD3881E72610400F27D10 /* HKUnit.swift in Sources */,
 				BB3386D41CD0069E0031BA94 /* SensorRxMessage.swift in Sources */,
+				BB4AD3A21E726C6900F27D10 /* Extensions.swift in Sources */,
 				BB3386E71CD0981B0031BA94 /* TransmitterVersionRxMessage.swift in Sources */,
 				BBDA18021C900ACC00D6D1BE /* DisconnectTxMessage.swift in Sources */,
 				BBDA17EF1C900A4400D6D1BE /* Transmitter.swift in Sources */,
@@ -373,10 +415,12 @@
 				BBDA18071C900ACC00D6D1BE /* TransmitterTimeRxMessage.swift in Sources */,
 				BBDA18081C900ACC00D6D1BE /* TransmitterTimeTxMessage.swift in Sources */,
 				BBDA18051C900ACC00D6D1BE /* KeepAliveTxMessage.swift in Sources */,
+				BB4AD3861E7260D200F27D10 /* Glucose.swift in Sources */,
 				BB3386D81CD0069E0031BA94 /* TransmitterStatus.swift in Sources */,
 				BB3386D91CD0069E0031BA94 /* TransmitterVersionTxMessage.swift in Sources */,
 				BB3386D71CD0069E0031BA94 /* SessionStopTxMessage.swift in Sources */,
 				BBDA18041C900ACC00D6D1BE /* GlucoseTxMessage.swift in Sources */,
+				BB4AD3A31E726C6900F27D10 /* NSData.swift in Sources */,
 				BB3386CF1CD0069E0031BA94 /* CalibrateGlucoseTxMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,8 +441,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -441,8 +487,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -461,48 +509,66 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		BB7A269C1C252DE000FB617A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 699CF5BFA173687C3397BE4C /* Pods-GINcose.debug.xcconfig */;
+			baseConfigurationReference = 2D71FA3567551188D8B415FD /* Pods-GINcose.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joe Ginley (7TGHM7PXQ9)";
+				DEVELOPMENT_TEAM = HUHLMDNCW3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GINcose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GINtechSystems.GINcose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a251420b-d0bc-440d-aa3c-7ed32f8fb73f";
+				PROVISIONING_PROFILE_SPECIFIER = GINcoseDev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "GINcose-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GINcose-Swift.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		BB7A269D1C252DE000FB617A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 406F71F7F56285415EA6B634 /* Pods-GINcose.release.xcconfig */;
+			baseConfigurationReference = 24779AC083A00823EEF7D946 /* Pods-GINcose.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joe Ginley (7TGHM7PXQ9)";
+				DEVELOPMENT_TEAM = HUHLMDNCW3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GINcose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GINtechSystems.GINcose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a251420b-d0bc-440d-aa3c-7ed32f8fb73f";
+				PROVISIONING_PROFILE_SPECIFIER = GINcoseDev;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "GINcose-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "GINcose-Swift.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

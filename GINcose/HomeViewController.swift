@@ -19,21 +19,21 @@ class HomeViewController: UIViewController, TransmitterDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        appDel.defaultTransmitter.stayConnected = true
+        appDel.defaultTransmitter.stayConnected = UserDefaults.standard.stayConnected
         appDel.defaultTransmitter.delegate = self
         
         // Check if there is a most recent glucose level available.
         let realm = try! Realm()
-        let latestGlucose = realm.objects(GlucoseInfo).last
+        let latestGlucose = realm.objects(GlucoseInfo.self).last
         
         if (latestGlucose != nil) {
-            self.glucoseLoading.hidden = true
+            self.glucoseLoading.isHidden = true
             self.glucoseLabel.text = String(latestGlucose!.glucose)
         }
         
         /*appDel.delay(0.5) { () -> () in
             self.testGlucose()
-            self.testSensor()
+            //self.testSensor()
         }*/
     }
 
@@ -42,23 +42,24 @@ class HomeViewController: UIViewController, TransmitterDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func transmitter(transmitter: Transmitter, didReadGlucose glucose: GlucoseRxMessage) {
-        NSLog("New Glucose: \(glucose)")
+    func transmitter(_ transmitter: Transmitter, didRead glucose: Glucose) {
+        NSLog("\(glucose)")
         
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.async { () -> Void in
             if (self.glucoseLabel.text == "???") {
-                self.glucoseLoading.hidden = true
+                self.glucoseLoading.isHidden = true
             }
             
-            self.glucoseLabel.text = NSNumberFormatter.localizedStringFromNumber(NSNumber(short: Int16(glucose.glucose)), numberStyle: .NoStyle)
+            self.glucoseLabel.text = NumberFormatter.localizedString(from: NSNumber(value: Int16(glucose.glucose) as Int16), number: .none)
             
             let latestGlucose = GlucoseInfo()
-            latestGlucose.id = Int(NSDate().timeIntervalSince1970)
+            latestGlucose.id = Int(Date().timeIntervalSince1970)
             latestGlucose.glucose = Int(glucose.glucose)
-            latestGlucose.timestamp = appDel.glucoseDateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: NSTimeInterval(Double(glucose.timestamp) / 1000)))
+            latestGlucose.timestamp = appDel.glucoseDateFormatter.string(from: Date(timeIntervalSinceNow: TimeInterval(Double(glucose.glucoseMessage.timestamp) / 1000)))
             
-            NSLog("\(latestGlucose.timestamp)")
+            //NSLog("\(latestGlucose.timestamp)")
             
+            //Update our local db with the latest glucose level.
             let realm = try! Realm()
             try! realm.write { () -> Void in
                 realm.add(latestGlucose)
@@ -66,30 +67,44 @@ class HomeViewController: UIViewController, TransmitterDelegate {
         }
     }
     
-    func transmitter(transmitter: Transmitter, didReadSensor sensor: SensorRxMessage) {
-        NSLog("\(sensor)")
-    }
-    
-    func transmitter(transmitter: Transmitter, didError error: ErrorType) {
+    func transmitter(_ transmitter: Transmitter, didError error: Swift.Error) {
         NSLog("\(error)")
         
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.async { () -> Void in
             self.glucoseLabel.text = "???"
-            self.glucoseLoading.hidden = false
+            self.glucoseLoading.isHidden = false
         }
     }
     
-    //Run a test blood sugar result.
-    func testGlucose() {
-        let glucoseMessage = GlucoseRxMessage(data: NSData(hexadecimalString: "3100680a00008a715700cc0006ffc42a")!)!
+    func transmitter(_ transmitter: Transmitter, didReadUnknownData data: Data) {
+        NSLog("\(data)")
         
-        transmitter(appDel.defaultTransmitter, didReadGlucose: glucoseMessage)
+        DispatchQueue.main.async { () -> Void in
+            self.glucoseLabel.text = "???"
+            self.glucoseLoading.isHidden = false
+        }
     }
     
-    //Run a test sensor result.
-    func testSensor() {
-        let sensorMessage = SensorRxMessage(data: NSData(hexadecimalString: "2f00a1b27400600b030020000300560f")!)!
+    // Run a test glucose result.
+    func testGlucose() {
+        let message = GlucoseRxMessage(data: Data(hexadecimalString: "3100680a00008a715700cc0006ffc42a")!)!
+        let glucose = Glucose(glucoseMessage: message, timeMessage: TransmitterTimeRxMessage(data: Data(hexadecimalString: "2500470272007cff710001000000fa1d")!)!, activationDate: Calendar(identifier: .gregorian).date(from: DateComponents(year: 2017, month: 3, day: 1))!)
         
-        transmitter(appDel.defaultTransmitter, didReadSensor: sensorMessage)
+        transmitter(appDel.defaultTransmitter, didRead: glucose)
     }
+    
+    // Run a test trend result.
+    func testTrend() {
+        let message = GlucoseRxMessage(data: Data(hexadecimalString: "31006f0a0000be7957007a0006e4818d")!)!
+        let glucose = Glucose(glucoseMessage: message, timeMessage: TransmitterTimeRxMessage(data: Data(hexadecimalString: "2500470272007cff710001000000fa1d")!)!, activationDate: Calendar(identifier: .gregorian).date(from: DateComponents(year: 2017, month: 3, day: 1))!)
+        
+        transmitter(appDel.defaultTransmitter, didRead: glucose)
+    }
+    
+    // Run a test sensor result.
+    /*func testSensor() {
+        let sensorMessage = SensorRxMessage(data: Data(hexadecimalString: "2f00a1b27400600b030020000300560f")!)!
+        
+        transmitter(appDel.defaultTransmitter, didRead: sensorMessage)
+    }*/
 }

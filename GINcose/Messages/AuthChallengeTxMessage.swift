@@ -1,9 +1,9 @@
 //
 //  AuthChallengeTxMessage.swift
-//  xDrip5
+//  GINcose
 //
-//  Created by Nathan Racklyeft on 11/22/15.
-//  Copyright © 2015 Nathan Racklyeft. All rights reserved.
+//  Created by Joe Ginley on 3/9/17.
+//  Copyright © 2017 GINtech Systems. All rights reserved.
 //
 
 import Foundation
@@ -11,8 +11,8 @@ import Foundation
 
 struct AuthChallengeTxMessage: TransmitterTxMessage {
     let opcode: UInt8 = 0x4
-    let challengeHash: NSData
-
+    let challengeHash: Data
+    
     var byteSequence: [Any] {
         return [opcode, challengeHash]
     }

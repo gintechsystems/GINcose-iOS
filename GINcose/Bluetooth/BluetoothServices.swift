@@ -6,13 +6,13 @@
 //  Copyright © 2016 GINtech Systems. All rights reserved.
 //
 
+
 enum TransmitterServiceUUID: String {
     case DeviceInfo = "180A"
     case Advertisement = "FEBC"
     case CGMService = "F8083532-849E-531C-C594-30F1F86A4EA5"
     case ServiceB = "F8084532-849E-531C-C594-30F1F86A4EA5"
 }
-
 
 enum DeviceInfoCharacteristicUUID: String {
     // Read

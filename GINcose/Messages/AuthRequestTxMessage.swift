@@ -1,9 +1,9 @@
 //
 //  AuthRequestTxMessage.swift
-//  xDrip5
+//  GINcose
 //
-//  Created by Nathan Racklyeft on 11/22/15.
-//  Copyright © 2015 Nathan Racklyeft. All rights reserved.
+//  Created by Joe Ginley on 3/9/17.
+//  Copyright © 2017 GINtech Systems. All rights reserved.
 //
 
 import Foundation
@@ -11,17 +11,17 @@ import Foundation
 
 struct AuthRequestTxMessage: TransmitterTxMessage {
     let opcode: UInt8 = 0x1
-    let singleUseToken: NSData
+    let singleUseToken: Data
     let endByte: UInt8 = 0x2
-
+    
     init() {
-        var UUIDBytes = [UInt8](count: 16, repeatedValue: 0)
-
-        NSUUID().getUUIDBytes(&UUIDBytes)
-
-        singleUseToken = NSData(bytes: &UUIDBytes, length: 8)
+        var UUIDBytes = [UInt8](repeating: 0, count: 16)
+        
+        NSUUID().getBytes(&UUIDBytes)
+        
+        singleUseToken = Data(bytes: UUIDBytes)
     }
-
+    
     var byteSequence: [Any] {
         return [opcode, singleUseToken, endByte]
     }
