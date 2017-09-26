@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         
-        
         self.window!.backgroundColor = UIColor.white
         self.window!.makeKeyAndVisible()
         return true
@@ -83,9 +82,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
     }
     
-    func sendLocalNotification() {
+    @objc func sendLocalNotification() {
         let realm = try! Realm()
-        let lastTwoGlucoses = realm.objects(GlucoseInfo.self).sorted(byProperty: "timestamp", ascending: false)
+        let lastTwoGlucoses = realm.objects(GlucoseInfo.self).sorted(byKeyPath: "timestamp", ascending: false)
         
         let previousGlucose :GlucoseInfo? = lastTwoGlucoses[1]
         let newestGlucose :GlucoseInfo? = lastTwoGlucoses[0]

@@ -8,6 +8,7 @@
 
 import RealmSwift
 
+@objcMembers
 class GlucoseInfo : Object {
     dynamic var id = 0
     dynamic var glucose = 0

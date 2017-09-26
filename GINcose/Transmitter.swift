@@ -97,8 +97,12 @@ public final class Transmitter: BluetoothManagerDelegate {
         }
     }
     
+    func lastTwoCharactersOfID() -> String {
+        return String(self.ID.suffix(2))
+    }
+    
     private func lastTwoCharactersOfString(_ string: String) -> String {
-        return string.substring(from: string.characters.index(string.endIndex, offsetBy: -2, limitedBy: string.startIndex)!)
+        return String(string.suffix(2))
     }
     
     func bluetoothManager(_ manager: BluetoothManager, shouldConnectPeripheral peripheral: CBPeripheral) -> Bool {
